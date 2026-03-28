@@ -1,8 +1,6 @@
-import os
 import json
 import time
 from dotenv import load_dotenv
-import redis
 
 # Load environment variables
 load_dotenv()

@@ -1,4 +1,4 @@
-import os
+
 
 def stitch_video(video_clips):
     """
