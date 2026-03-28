@@ -1,0 +1,8 @@
+redis==5.0.1
+boto3==1.34.34
+openai==1.12.0
+requests==2.31.0
+Pillow>=10.4.0
+moviepy==1.0.3
+pydub==0.25.1
+python-dotenv==1.0.1
