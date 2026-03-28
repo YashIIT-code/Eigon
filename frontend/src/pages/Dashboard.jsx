@@ -6,6 +6,7 @@ import VideoCard from '../components/VideoCard';
 import { projectsApi } from '../api/projects';
 
 export default function Dashboard() {
+  const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
