@@ -16,6 +16,7 @@ load_dotenv()
 # from services.s3_service import upload_to_s3
 from services.redis_service import connect_redis, update_job_status
 
+
 def process_job(job_id, data, cache):
     print(f"🎬 Starting processing for job {job_id}")
     try:
@@ -61,6 +62,7 @@ def process_job(job_id, data, cache):
     except Exception as e:
         print(f"❌ Error processing job {job_id}: {str(e)}")
         update_job_status(cache, job_id, 'failed', error_message=str(e))
+
 
 def worker_loop():
     cache = connect_redis()

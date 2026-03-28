@@ -1,5 +1,6 @@
 import os
 
+
 def generate_narration(scenes):
     """
     Calls TTS API (like ElevenLabs) to generate voiceovers for each scene.
