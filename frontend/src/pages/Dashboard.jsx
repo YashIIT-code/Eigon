@@ -1,17 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Video, Sparkles, Loader2, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
 import VideoCard from '../components/VideoCard';
 import { projectsApi } from '../api/projects';
-import { useAuthStore } from '../store/authStore';
 
 export default function Dashboard() {
-  const [videos, setVideos] = useState([]);
-  const { isLoading, setIsLoading } = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
-  const fetchVideos = async () => {
+  const fetchVideos = useCallback(async () => {
     try {
       const data = await projectsApi.getAll();
       setVideos(data.jobs || []);
@@ -21,7 +19,7 @@ export default function Dashboard() {
       setIsLoading(false);
       setIsRefreshing(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchVideos();
@@ -32,7 +30,7 @@ export default function Dashboard() {
     }, 10000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchVideos]);
 
   const handleRefresh = () => {
     setIsRefreshing(true);
