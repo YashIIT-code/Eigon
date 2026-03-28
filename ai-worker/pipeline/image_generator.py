@@ -1,5 +1,4 @@
-
-
+import os
 def generate_images(prompts):
     """
     Calls Stable Diffusion API (local A1111 or remote) to generate images from prompts.
