@@ -1,6 +1,7 @@
 import os
 import redis
 
+
 def connect_redis():
     host = os.getenv('REDIS_HOST', 'localhost')
     port = int(os.getenv('REDIS_PORT', 6379))
@@ -14,6 +15,7 @@ def connect_redis():
     )
     print("✅ Python Worker connected to Redis")
     return r
+
 
 def update_job_status(cache, job_id, status, progress, result_url=None, error_message=None):
     # This simulates updating the Job table in PostgreSQL directly via Node API

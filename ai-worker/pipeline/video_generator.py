@@ -1,6 +1,7 @@
 import os
 import time
 
+
 def generate_video_clips(image_paths):
     """
     Calls image-to-video API (Runway ML Gen-2 or similar) to animate the images.

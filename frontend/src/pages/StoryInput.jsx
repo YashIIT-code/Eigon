@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Wand2, Type, Mic, Loader2, Music, Clapperboard, Text } from 'lucide-react';
+import { Sparkles, Wand2, Mic, Loader2, Music, Clapperboard, Text } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { projectsApi } from '../api/projects';
 

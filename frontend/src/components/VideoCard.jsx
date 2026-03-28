@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play, Clock, MoreVertical, Loader2 } from 'lucide-react';
+import { Play, Clock, MoreVertical, Loader2, Film } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function VideoCard({ video, delay = 0 }) {

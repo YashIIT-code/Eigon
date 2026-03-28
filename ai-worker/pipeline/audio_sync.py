@@ -1,3 +1,4 @@
+
 def sync_audio(video_clips, audio_clips):
     """
     Syncs generated voiceover audio with the video clips.

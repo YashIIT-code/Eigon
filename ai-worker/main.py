@@ -1,6 +1,8 @@
 import json
 import time
+
 from dotenv import load_dotenv
+
 
 # Load environment variables
 load_dotenv()
@@ -15,6 +17,8 @@ load_dotenv()
 # from pipeline.video_stitcher import stitch_video
 # from services.s3_service import upload_to_s3
 from services.redis_service import connect_redis, update_job_status
+
+
 
 
 def process_job(job_id, data, cache):
@@ -96,6 +100,7 @@ def worker_loop():
         except Exception as e:
             print(f"Worker loop error: {e}")
             time.sleep(1)
+
 
 if __name__ == "__main__":
     worker_loop()

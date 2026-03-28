@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Video, Film, Sparkles, Loader2, RefreshCw } from 'lucide-react';
+import { Plus, Video, Sparkles, Loader2, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
 import VideoCard from '../components/VideoCard';
 import { projectsApi } from '../api/projects';
@@ -8,9 +8,8 @@ import { useAuthStore } from '../store/authStore';
 
 export default function Dashboard() {
   const [videos, setVideos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, setIsLoading } = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
-  const { user } = useAuthStore();
 
   const fetchVideos = async () => {
     try {
@@ -78,7 +77,7 @@ export default function Dashboard() {
           </div>
           <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">No videos yet</h3>
           <p className="text-gray-400 max-w-sm mx-auto mb-8 leading-relaxed">
-            You haven't generated any videos yet. Start your first cinematic AI journey today.
+            You haven&apos;t generated any videos yet. Start your first cinematic AI journey today.
           </p>
           <Link to="/create" className="btn-primary py-3 px-8 text-lg inline-flex items-center shadow-[0_0_20px_rgba(99,102,241,0.3)]">
             <Sparkles className="w-5 h-5 mr-3" />

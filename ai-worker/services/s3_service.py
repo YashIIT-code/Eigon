@@ -2,6 +2,7 @@ import os
 import boto3
 from botocore.exceptions import ClientError
 
+
 def upload_to_s3(file_path, bucket=None, object_name=None):
     if object_name is None:
         object_name = os.path.basename(file_path)

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Download, Share2, Play, Video, Terminal, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Download, Share2, Video, Terminal, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projectsApi } from '../api/projects';
 import ProgressBar from '../components/ProgressBar';
@@ -46,7 +46,7 @@ export default function VideoPreview() {
       isMounted = false;
       clearInterval(interval);
     };
-  }, [id, video?.status]);
+  }, [id, video]);
 
   if (error) {
     return (
@@ -163,7 +163,6 @@ export default function VideoPreview() {
               {PIPELINE_STEPS.map((step, idx) => {
                 const isActive = step.id === video.status;
                 const isPast = currentStepIndex > idx || isComplete;
-                const isPending = currentStepIndex < idx && !isComplete && !isFailed;
                 
                 return (
                   <div key={step.id} className="relative flex items-start group">
@@ -183,10 +182,10 @@ export default function VideoPreview() {
                           <div className="w-2.5 h-2.5 rounded-full bg-accent-500 animate-pulse"></div>
                         </div>
                       ) : isFailed && isActive ? (
-						<div className="w-7 h-7 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center ring-1 ring-red-500/50">
+                        <div className="w-7 h-7 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center ring-1 ring-red-500/50">
                           <AlertCircle className="w-4 h-4" />
                         </div>
-					  ) : (
+                      ) : (
                         <div className="w-7 h-7 rounded-full bg-dark-800 text-gray-600 flex items-center justify-center ring-1 ring-white/10 group-hover:ring-white/30 transition-colors">
                           <div className="w-2 h-2 rounded-full bg-gray-600"></div>
                         </div>
