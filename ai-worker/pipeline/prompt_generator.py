@@ -1,9 +1,9 @@
 def generate_prompts(scenes):
     """
-    Converts scene descriptions into optimized Stable Diffusion prompts.
+    Converts raw scene descriptions into optimized Stable Diffusion prompts.
     """
-    print(f"Generating prompts for {len(scenes)} scenes...")
+    print(f"Optimizing prompts for {len(scenes)} scenes...")
     return [
-        {"prompt": "masterpiece, highly detailed, dark forest, moody lighting, fantasy", "negative": "blurry, low quality"},
-        {"prompt": "masterpiece, highly detailed, close up of a hero walking, cinematic lighting", "negative": "blurry, low quality"}
+        "cinematic 4k photo of a sunset over a neon city",
+        "detailed portrait of a futuristic pilot in a cockpit"
     ]

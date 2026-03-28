@@ -1,10 +1,10 @@
 def generate_scenes(story, num_scenes=5):
     """
-    Calls LLM (OpenAI/Claude) to break the story into a sequence of scenes.
+    Uses LLM to segment the user's story into distinct visual scenes.
     """
-    print(f"Generating {num_scenes} scenes for story...")
+    print(f"Segmenting story into {num_scenes} scenes...")
     # Mock return
     return [
-        {"scene_number": 1, "description": "Establishing shot of a dark forest", "narration": "Once upon a time..."},
-        {"scene_number": 2, "description": "Close up of hero walking", "narration": "Our hero began his journey."}
+        {"id": 1, "description": "The city skyline at night"},
+        {"id": 2, "description": "A close up of the protagonist"}
     ]
